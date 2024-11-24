@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="token">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multi-Stage Mars Visit Application Form - Apply for a once-in-a-lifetime journey to Mars.">
+    <meta name="keywords" content="Mars, space travel, application, multi-stage form, space exploration">
+    <meta name="author" content="Mars Travel Agency">
+    
+    <!-- Open Graph meta tags for social media -->
+    <meta property="og:title" content="Multi-Stage Mars Visit Application Form">
+    <meta property="og:description" content="Apply for a once-in-a-lifetime journey to Mars.">
+    <meta property="og:image" content="mars-application.jpg">
+    <meta property="og:url" content="http://marsapplicationform.com">
+    
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multi-Stage Mars Visit Application Form">
+    <meta name="twitter:description" content="Apply for a once-in-a-lifetime journey to Mars.">
+    <meta name="twitter:image" content="mars-application.jpg"> 
+
+    <title>Apply - Multi-Stage Mars Visit Application Form</title>
+
+    <!-- Import CSS files -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/toastify.min.css">
+    <link rel="stylesheet" href="assets/app.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+</head>  
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Mars Travel Application</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">About Mars Travel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/apply.html">Apply Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#mission">Our Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#timeline">Journey Timeline</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <!-- Multi-Stage Form -->
+        <div id="apply" class="my-5">
+            <div class="text-center">
+                <h2>Multi-Stage Application Form</h2>
+                <p>Complete all the stages to finalize your application for the Mars visit program.</p>
+            </div>
+
+            <div id="multiStageForm">
+                <!-- Form Navigation -->
+                <div id="formNavigation" class="mb-4 text-center">
+                    <button class="btn btn-outline-primary" id="prevStage" disabled>Previous</button>
+                    <button class="btn btn-outline-primary" id="nextStage">Next</button>
+                </div>
+
+                <!-- Form Stages -->
+                <div id="formStages">
+                    <!-- Stage 1: Personal Information -->
+                    <div id="stage1" class="form-stage">
+                        <h3>Stage 1: Personal Information</h3>
+                        <form id="stage1Form">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="dateOfBirth" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nationality" class="form-label">Nationality</label>
+                                <input type="text" class="form-control" id="nationality" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactInfo" class="form-label">Contact Information</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <input type="tel" class="form-control mt-2" id="phone" placeholder="Phone Number" required>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Stage 2: Travel Preferences -->
+                    <div id="stage2" class="form-stage d-none">
+                        <h3>Stage 2: Travel Preferences</h3>
+                        <form id="stage2Form">
+                            <div class="mb-3">
+                                <label for="departureDate" class="form-label">Preferred Departure Date</label>
+                                <input type="date" class="form-control" id="departureDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="returnDate" class="form-label">Preferred Return Date</label>
+                                <input type="date" class="form-control" id="returnDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="accommodationPreference" class="form-label">Accommodation Preference</label>
+                                <select class="form-control" id="accommodationPreference" required>
+                                    <option value="spaceHotel">Space Hotel</option>
+                                    <option value="martianBase">Martian Base</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="specialRequests" class="form-label">Special Requests</label>
+                                <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Stage 3: Health and Safety -->
+                    <div id="stage3" class="form-stage d-none">
+                        <h3>Stage 3: Health and Safety</h3>
+                        <form id="stage3Form">
+                            <div class="mb-3">
+                                <label for="healthDeclaration" class="form-label">Do you declare you are in good health?</label>
+                                <select class="form-control" id="healthDeclaration" required>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emergencyContact" class="form-label">Emergency Contact Information</label>
+                                <input type="text" class="form-control" id="emergencyContact" placeholder="Contact Name" required>
+                                <input type="tel" class="form-control mt-2" id="emergencyPhone" placeholder="Contact Phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="medicalConditions" class="form-label">Any Medical Conditions?</label>
+                                <textarea class="form-control" id="medicalConditions" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div id="formSubmit" class="d-none">
+                    <button class="btn btn-success" id="submitForm">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import JS files -->
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/bootstrap.bundle.min.js"></script>
+    <script src="assets/toastify-js.js"></script>
+</body>
+</html>
